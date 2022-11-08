@@ -27,10 +27,14 @@ const updatePlayIcon = () => {
 };
 
 //update the progress and timestamp
-const updateProgress = () => {};
+const updateProgress = () => {
+  progress.value = (video.currentTime / video.duration) * 100;
+};
 
 // set video time to progress
-const setVideoProgress = () => {};
+const setVideoProgress = () => {
+  video.currentTime = (+progress.value * video.duration) / 100;
+};
 
 //stops the video
 const stopVideo = () => {
