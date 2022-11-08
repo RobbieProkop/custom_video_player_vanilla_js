@@ -9,10 +9,22 @@ const timestamp = document.getElementById("timestamp");
 //functions
 
 //used to play and pause the video
-const toggleVideoStatus = () => {};
+const toggleVideoStatus = () => {
+  if (video.paused) {
+    return video.play();
+  }
+
+  video.pause();
+};
 
 //update play/pause icon
-const updatePlayIcon = () => {};
+const updatePlayIcon = () => {
+  if (video.pause) {
+    return (play.innerHTML = '<i class="fa fa-play fa-2x"></i>');
+  }
+
+  play.innerHTML = '<i class="fa fa-pause fa-2x"></i>';
+};
 
 //update the progress and timestamp
 const updateProgress = () => {};
