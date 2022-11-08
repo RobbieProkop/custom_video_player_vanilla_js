@@ -19,7 +19,7 @@ const toggleVideoStatus = () => {
 
 //update play/pause icon
 const updatePlayIcon = () => {
-  if (video.pause) {
+  if (video.paused) {
     return (play.innerHTML = '<i class="fa fa-play fa-2x"></i>');
   }
 
@@ -33,7 +33,11 @@ const updateProgress = () => {};
 const setVideoProgress = () => {};
 
 //stops the video
-const stopVideo = () => {};
+const stopVideo = () => {
+  video.currentTime = 0;
+  video.pause();
+  play.innerHTML = '<i class="fa fa-play fa-2x"></i>';
+};
 
 //event listeners
 video.addEventListener("click", toggleVideoStatus);
